@@ -1,0 +1,149 @@
+#+title: Growth Rates and Financing Needed
+#+author: Matt Brigida, Ph.D.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+
+* Growth Rates
+
+This presentation will give you an idea of how the growth rate of the firm relates to financing required.  Let's say you increase your firm's expected sales.  Then:
+
+-  You will also need more assets to provide for the increased sales.
+
+-  An increase in assets will require an increase in the firm's liabilities and/or equity (remember the balance sheet identity).
+
+The amount of assets required will affect the proportion of debt and equity required.
+
+ 
+
+*  Importance
+
+Understanding the relationship between growth and financing will help the firm set coherent goals. For example, you may hear a firm say they want to both increase sales and lower debt levels.  Are these goals compatible?  The following discussion will answer this question.
+
+ 
+
+* External Financing Needed (EFN)
+
+Say we expect sales to increase by $\$\Delta Sales$, and denote the firm's profit margin and dividend payout ratio by *PM* and *d* respectively. Define *Variable Debt* as the amount of debt that increases and decreases with assets. *Pro. Sales* is projected sales, and $\Delta Sales$ is the projected change in sales.  Lastly assume the amount of assets needed to generate a dollar in sales is constant over the range of sales we are considering (constant assets over sales ratio).  Then for a given change in sales, the amount of external financing needed can be calculated by:
+
+$EFN = \frac{Assets}{Sales}\Delta Sales + \frac{Variable Debt}{Sales}\Delta Sales - PM(Pro. Sales)(1 - d)$
+
+ 
+
+#+BEGIN_COMMENT
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+inputPanel(
+  sliderInput("changeSales", "Change in Sales", min = 0, max = 1000, step = 10),
+  sliderInput("projSales", "Projected Sales", min = 20000, max = 30000, step = 1000),
+  sliderInput("varDebt", "Variable Debt", min = 20000, max = 30000, step = 1000),
+  sliderInput("pm", "Profit Margin", min = 0, max = 100, step = 1),
+  sliderInput("div", "Dividend Payout Ratio", min = 0, max = 100, step = 1)
+)
+```
+#+END_COMMENT
+
+ 
+
+* Internal Growth Rate (IGR)
+
+IGR is the maximum rate at which a firm can grow its assets using only internal financing (retained earnings).  This means the firm cannot issue new debt or equity.  The /IGR/ is:
+
+$IGR = \frac{ROA(b)}{1 - ROA(b)}$
+
+where *ROA* is the firm's return on assets, and *b* is the firm's plowback ratio.
+
+* Sustainable Growth Rate (SGR)
+
+IGR is the maximum rate at which a firm can grow its assets using internal financing, and issuing the amount of debt needed to keep its total-debt ratio constant.  
+
+$SGR = \frac{ROE(b)}{1 - ROE(b)}$
+
+where *ROE* is the firm's return on equity, and *b* is the firm's plowback ratio.
+ 
+* Self-Quiz Questions
+
+
+#+begin_export html
+<script>
+var submitAnswer1 = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+   // alert('please select choice answer');
+document.getElementById("p1").innerHTML = "Choose your answer.";
+document.getElementById("p1").style.backgroundColor = "white";
+  } else if ( val == "Correct" ) {
+//    alert('Answer is correct !');
+document.getElementById("p1").innerHTML = "Correct!";
+document.getElementById("p1").style.backgroundColor = "#90EE90";
+  } else {
+//    alert('Answer is wrong');
+document.getElementById("p1").innerHTML = "Wrong";
+document.getElementById("p1").style.backgroundColor = "#ff6666";
+  }
+};
+</script>
+
+
+
+<p>1. Assume Utica Boiler Inc has a 15% ROE and 40% payout ratio.  What is the maximum rate the firm can grow while maintining a constant total debt ratio and not selling any new stock?</p>
+<form >
+<input type="radio" name="choice" value="Incorrect"> 1.44%<br>
+<input type="radio" name="choice" value="Correct"> 6.38%<br>
+<input type="radio" name="choice" value="Incorrect"> 15.00%<br>
+<input type="radio" name="choice" value="Incorrect"> 33.12%
+</form>
+<button onclick="submitAnswer1()">Submit Answer</button>
+<span id="p1"></span>
+<br>
+#+end_export
+
+
+#+begin_export html
+<script>
+var submitAnswer2 = function() {
+
+  var radios = document.getElementsByName('choice2');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+   // alert('please select choice answer');
+document.getElementById("p2").innerHTML = "Choose your answer.";
+document.getElementById("p2").style.backgroundColor = "white";
+  } else if ( val == "Correct" ) {
+//    alert('Answer is correct !');
+document.getElementById("p2").innerHTML = "Correct!";
+document.getElementById("p2").style.backgroundColor = "#90EE90";
+  } else {
+//    alert('Answer is wrong');
+document.getElementById("p2").innerHTML = "Wrong";
+document.getElementById("p2").style.backgroundColor = "#ff6666";
+  }
+};
+</script>
+
+
+<br>
+<p>2. Assume McCauley Ski Inc. has a 12% ROA and 20% payout ratio.  What is the maximum rate the firm can grow using only internal financing?</p>
+<form >
+<input type="radio" name="choice2" value="Incorrect"> -4.51%<br>
+<input type="radio" name="choice2" value="Incorrect"> 0.00%<br>
+<input type="radio" name="choice2" value="Correct"> 2.46%<br>
+<input type="radio" name="choice2" value="Incorrect"> 12.55%
+</form>
+<button onclick="submitAnswer2()">Submit Answer</button>
+<span id="p2"></span>
+#+end_export
