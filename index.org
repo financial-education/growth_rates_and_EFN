@@ -11,15 +11,12 @@ This presentation will give you an idea of how the growth rate of the firm relat
 
 -  An increase in assets will require an increase in the firm's liabilities and/or equity (remember the balance sheet identity).
 
-The amount of assets required will affect the proportion of debt and equity required.
-
- 
+The amount of assets required will affect the proportion of debt and equity required. 
 
 *  Importance
 
 Understanding the relationship between growth and financing will help the firm set coherent goals. For example, you may hear a firm say they want to both increase sales and lower debt levels.  Are these goals compatible?  The following discussion will answer this question.
 
- 
 
 * External Financing Needed (EFN)
 
@@ -39,9 +36,7 @@ inputPanel(
   sliderInput("div", "Dividend Payout Ratio", min = 0, max = 100, step = 1)
 )
 ```
-#+END_COMMENT
-
- 
+#+END_COMMENT 
 
 * Internal Growth Rate (IGR)
 
@@ -58,6 +53,13 @@ IGR is the maximum rate at which a firm can grow its assets using internal finan
 $SGR = \frac{ROE(b)}{1 - ROE(b)}$
 
 where *ROE* is the firm's return on equity, and *b* is the firm's plowback ratio.
+
+* Factors that Affect a Firm's Growth Rate
+
+Now that we have equations for IGR and SGR, we can see the determinants of a firm's maximum growth rate.  As a financial manager, knowing these relationships will allow you to make decisions while cognizant of the asset growth rate impacts.
+
+For example, let's say your CEO wants to increase the dividend, what effect will that decision have on the firm's growth rate?  In both IGR and SGR, increasing the dividend with reduce the plowback ratio.  This in turn decreases the numerator, and increases the denominator, reducing the firm's maximum growth rate.  So if you increase dividends, (1) the firm's growth rate will slow, or (2) the firm will have to seek external financing which affects its capital structure.
+
  
 * Self-Quiz Questions
 
