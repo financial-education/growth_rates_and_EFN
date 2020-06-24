@@ -149,3 +149,63 @@ document.getElementById("p2").style.backgroundColor = "#ff6666";
 <button onclick="submitAnswer2()">Submit Answer</button>
 <span id="p2"></span>
 #+end_export
+
+#+begin_export html
+<script>
+var submitAnswer3 = function() {
+
+  var radios = document.getElementsByName('choice3');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+   // alert('please select choice answer');
+document.getElementById("p3").innerHTML = "Choose your answer.";
+document.getElementById("p3").style.backgroundColor = "white";
+  } else if ( val == "Correct" ) {
+//    alert('Answer is correct !');
+document.getElementById("p3").innerHTML = "Correct!";
+document.getElementById("p3").style.backgroundColor = "#90EE90";
+  } else {
+//    alert('Answer is wrong');
+document.getElementById("p3").innerHTML = "Wrong";
+document.getElementById("p3").style.backgroundColor = "#ff6666";
+  }
+};
+</script>
+
+
+<br>
+<p>3.  If a firm increases its profit margin, its IGR and SGR _______.  </p>
+<form >
+<input type="radio" name="choice3" value="Correct"> Increase<br>
+<input type="radio" name="choice3" value="Incorrect"> Decrease<br>
+<input type="radio" name="choice3" value="Incorrect"> Are unchanged
+</form>
+<button onclick="submitAnswer3()">Submit Answer</button>
+<span id="p3"></span>
+#+end_export
+
+* [[https://en.wikipedia.org/wiki/Flesch%25E2%2580%2593Kincaid_readability_tests][Reading Ease Score]]
+
+#+BEGIN_SRC elisp :results output :exports results
+(print (writegood-reading-ease))
+#+END_SRC
+
+#+RESULTS:
+: 
+: "Flesch-Kincaid reading ease score: 77.93 Fairly easy (7th grade)"
+
+#+BEGIN_SRC elisp :results output :exports results
+(print (writegood-grade-level))
+#+END_SRC
+
+#+RESULTS:
+: 
+: "Flesch-Kincaid grade level score: 4.77"
+
