@@ -40,6 +40,57 @@ $SGR = \frac{ROE(b)}{1 - ROE(b)}$
 
 where *ROE* is the firm's return on equity, and *b* is the firm's plowback ratio.
 
+#+BEGIN_EXPORT html
+
+<script>
+
+var calculate = function() {
+
+  var roe = Number(document.getElementById("roe").value);
+  var b = Number(document.getElementById("b").value);
+
+  var sgr = (roe * b) / (1 - roe * b);
+  
+  document.getElementById("out_sgr").innerHTML = sgr.toFixed(4);
+
+}
+
+</script>
+
+<body class="all">
+  <h3>
+    SGR Calculator
+  </h3>
+
+  <div class="row">
+
+    <div class="column">
+      <table style="width:100%">
+        <tr>
+          <th align="left">ROE:</th>
+          <th><input id="roe" value="0.15" style="width: 50px"></th>
+        </tr>
+        <tr>
+          <th align="left">Plowback Ratio:</th>
+          <th><input id="b" value="0.2" style="width: 50px"></th>
+        </tr>
+      </table>
+      <button onclick="calculate()">
+        Calculate.
+      </button>
+    </div>
+
+    <div class="column">
+    <p><b>SGR: <span id="out_sgr"></span></b></p>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+</body>
+
+#+END_EXPORT
 
 #+BEGIN_EXPORT html
 <style>

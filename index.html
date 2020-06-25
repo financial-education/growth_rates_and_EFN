@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-24 Wed 21:42 -->
+<!-- 2020-06-24 Wed 21:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Growth Rates and Financing Needed</title>
@@ -262,21 +262,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbb6aa97">1. Growth Rates</a></li>
-<li><a href="#org135771d">2. Importance</a></li>
-<li><a href="#org3ec431f">3. External Financing Needed (EFN)</a></li>
-<li><a href="#org4c5333a">4. Internal Growth Rate (IGR)</a></li>
-<li><a href="#orgd88a434">5. Sustainable Growth Rate (SGR)</a></li>
-<li><a href="#org461c8b2">6. Factors that Affect a Firm's Growth Rate</a></li>
-<li><a href="#org30b6f74">7. Self-Quiz Questions</a></li>
-<li><a href="#org3c4ef38">8. Reading Ease Score</a></li>
+<li><a href="#org01e9e7f">1. Growth Rates</a></li>
+<li><a href="#org353a5e4">2. Importance</a></li>
+<li><a href="#org48b1a7c">3. External Financing Needed (EFN)</a></li>
+<li><a href="#orgfd8fa8c">4. Internal Growth Rate (IGR)</a></li>
+<li><a href="#org2d0a176">5. Sustainable Growth Rate (SGR)</a></li>
+<li><a href="#orgbfb45d3">6. Factors that Affect a Firm's Growth Rate</a></li>
+<li><a href="#orgd646236">7. Self-Quiz Questions</a></li>
+<li><a href="#orge63d2c7">8. Reading Ease Score</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgbb6aa97" class="outline-2">
-<h2 id="orgbb6aa97"><span class="section-number-2">1</span> Growth Rates</h2>
+<div id="outline-container-org01e9e7f" class="outline-2">
+<h2 id="org01e9e7f"><span class="section-number-2">1</span> Growth Rates</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This presentation will give you an idea of how the growth rate of the firm relates to financing required.  Let's say you increase your firm's expected sales.  Then:
@@ -294,8 +294,8 @@ The amount of assets required will affect the proportion of debt and equity requ
 </div>
 </div>
 
-<div id="outline-container-org135771d" class="outline-2">
-<h2 id="org135771d"><span class="section-number-2">2</span> Importance</h2>
+<div id="outline-container-org353a5e4" class="outline-2">
+<h2 id="org353a5e4"><span class="section-number-2">2</span> Importance</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Understanding the relationship between growth and financing will help the firm set coherent goals. For example, you may hear a firm say they want to both increase sales and lower debt levels.  Are these goals compatible?  The following discussion will answer this question.
@@ -304,8 +304,8 @@ Understanding the relationship between growth and financing will help the firm s
 </div>
 
 
-<div id="outline-container-org3ec431f" class="outline-2">
-<h2 id="org3ec431f"><span class="section-number-2">3</span> External Financing Needed (EFN)</h2>
+<div id="outline-container-org48b1a7c" class="outline-2">
+<h2 id="org48b1a7c"><span class="section-number-2">3</span> External Financing Needed (EFN)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Say we expect sales to increase by $\\(\Delta Sales\), and denote the firm's profit margin and dividend payout ratio by <b>PM</b> and <b>d</b> respectively. Define <b>Variable Debt</b> as the amount of debt that increases and decreases with assets. <b>Pro. Sales</b> is projected sales, and \(\Delta Sales\) is the projected change in sales.  Lastly assume the amount of assets needed to generate a dollar in sales is constant over the range of sales we are considering (constant assets over sales ratio).  Then for a given change in sales, the amount of external financing needed can be calculated by:
@@ -317,8 +317,8 @@ Say we expect sales to increase by $\\(\Delta Sales\), and denote the firm's pro
 </div>
 </div>
 
-<div id="outline-container-org4c5333a" class="outline-2">
-<h2 id="org4c5333a"><span class="section-number-2">4</span> Internal Growth Rate (IGR)</h2>
+<div id="outline-container-orgfd8fa8c" class="outline-2">
+<h2 id="orgfd8fa8c"><span class="section-number-2">4</span> Internal Growth Rate (IGR)</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 IGR is the maximum rate at which a firm can grow its assets using only internal financing (retained earnings).  This means the firm cannot issue new debt or equity.  The <i>IGR</i> is:
@@ -334,8 +334,8 @@ where <b>ROA</b> is the firm's return on assets, and <b>b</b> is the firm's plow
 </div>
 </div>
 
-<div id="outline-container-orgd88a434" class="outline-2">
-<h2 id="orgd88a434"><span class="section-number-2">5</span> Sustainable Growth Rate (SGR)</h2>
+<div id="outline-container-org2d0a176" class="outline-2">
+<h2 id="org2d0a176"><span class="section-number-2">5</span> Sustainable Growth Rate (SGR)</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 IGR is the maximum rate at which a firm can grow its assets using internal financing, and issuing the amount of debt needed to keep its total-debt ratio constant.  
@@ -350,6 +350,54 @@ where <b>ROE</b> is the firm's return on equity, and <b>b</b> is the firm's plow
 </p>
 
 
+<script>
+
+var calculate = function() {
+
+  var roe = Number(document.getElementById("roe").value);
+  var b = Number(document.getElementById("b").value);
+
+  var sgr = (roe * b) / (1 - roe * b);
+  
+  document.getElementById("out_sgr").innerHTML = sgr.toFixed(4);
+
+}
+
+</script>
+
+<body class="all">
+  <h3>
+    SGR Calculator
+  </h3>
+
+  <div class="row">
+
+    <div class="column">
+      <table style="width:100%">
+        <tr>
+          <th align="left">ROE:</th>
+          <th><input id="roe" value="0.15" style="width: 50px"></th>
+        </tr>
+        <tr>
+          <th align="left">Plowback Ratio:</th>
+          <th><input id="b" value="0.2" style="width: 50px"></th>
+        </tr>
+      </table>
+      <button onclick="calculate()">
+        Calculate.
+      </button>
+    </div>
+
+    <div class="column">
+    <p><b>SGR: <span id="out_sgr"></span></b></p>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+</body>
+
 <style>
 .fiddle iframe {
 height: 300px //you can manually change this height
@@ -363,8 +411,8 @@ height: 300px //you can manually change this height
 </div>
 
 
-<div id="outline-container-org461c8b2" class="outline-2">
-<h2 id="org461c8b2"><span class="section-number-2">6</span> Factors that Affect a Firm's Growth Rate</h2>
+<div id="outline-container-orgbfb45d3" class="outline-2">
+<h2 id="orgbfb45d3"><span class="section-number-2">6</span> Factors that Affect a Firm's Growth Rate</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Now that we have equations for IGR and SGR, we can see the determinants of a firm's maximum growth rate.  As a financial manager, knowing these relationships will allow you to make decisions while cognizant of the asset growth rate impacts.
@@ -377,8 +425,8 @@ For example, let's say your CEO wants to increase the dividend, what effect will
 </div>
 
 
-<div id="outline-container-org30b6f74" class="outline-2">
-<h2 id="org30b6f74"><span class="section-number-2">7</span> Self-Quiz Questions</h2>
+<div id="outline-container-orgd646236" class="outline-2">
+<h2 id="orgd646236"><span class="section-number-2">7</span> Self-Quiz Questions</h2>
 <div class="outline-text-2" id="text-7">
 <script>
 var submitAnswer1 = function() {
@@ -503,18 +551,18 @@ document.getElementById("p3").style.backgroundColor = "#ff6666";
 </div>
 </div>
 
-<div id="outline-container-org3c4ef38" class="outline-2">
-<h2 id="org3c4ef38"><span class="section-number-2">8</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
+<div id="outline-container-orge63d2c7" class="outline-2">
+<h2 id="orge63d2c7"><span class="section-number-2">8</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
 <div class="outline-text-2" id="text-8">
 <pre class="example">
 
-"Flesch-Kincaid reading ease score: 78.66 Fairly easy (7th grade)"
+"Flesch-Kincaid reading ease score: 81.70 Easy (6th grade)"
 
 </pre>
 
 <pre class="example">
 
-"Flesch-Kincaid grade level score: 4.55"
+"Flesch-Kincaid grade level score: 4.17"
 
 </pre>
 </div>
@@ -522,7 +570,7 @@ document.getElementById("p3").style.backgroundColor = "#ff6666";
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-06-24 Wed 21:42</p>
+<p class="date">Created: 2020-06-24 Wed 21:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
