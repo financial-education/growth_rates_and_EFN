@@ -24,20 +24,6 @@ Say we expect sales to increase by $\$\Delta Sales$, and denote the firm's profi
 
 $EFN = \frac{Assets}{Sales}\Delta Sales + \frac{Variable Debt}{Sales}\Delta Sales - PM(Pro. Sales)(1 - d)$
 
- 
-
-#+BEGIN_COMMENT
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-inputPanel(
-  sliderInput("changeSales", "Change in Sales", min = 0, max = 1000, step = 10),
-  sliderInput("projSales", "Projected Sales", min = 20000, max = 30000, step = 1000),
-  sliderInput("varDebt", "Variable Debt", min = 20000, max = 30000, step = 1000),
-  sliderInput("pm", "Profit Margin", min = 0, max = 100, step = 1),
-  sliderInput("div", "Dividend Payout Ratio", min = 0, max = 100, step = 1)
-)
-```
-#+END_COMMENT 
-
 * Internal Growth Rate (IGR)
 
 IGR is the maximum rate at which a firm can grow its assets using only internal financing (retained earnings).  This means the firm cannot issue new debt or equity.  The /IGR/ is:
@@ -53,6 +39,24 @@ IGR is the maximum rate at which a firm can grow its assets using internal finan
 $SGR = \frac{ROE(b)}{1 - ROE(b)}$
 
 where *ROE* is the firm's return on equity, and *b* is the firm's plowback ratio.
+
+
+#+BEGIN_EXPORT html
+<style>
+.fiddle iframe {
+height: 300px //you can manually change this height
+}
+</style>
+
+<div class="fiddle">
+<script async src="https://jsfiddle.net/mbkr1/jnzv5de1/embed/result,js,html,css/dark/"></script>
+</div>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html :eval no
+<iframe width="100%" height="300" src="https://jsfiddle.net/mbkr1/jnzv5de1/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+#+END_EXPORT
+
 
 * Factors that Affect a Firm's Growth Rate
 
